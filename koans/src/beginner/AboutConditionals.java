@@ -15,7 +15,7 @@ public class AboutConditionals {
         if (true) {
             x++;
         }
-        assertEquals(x, __);
+        assertEquals(x, 2);
     }
 
     @Koan
@@ -27,7 +27,7 @@ public class AboutConditionals {
         } else {
             x--;
         }
-        assertEquals(x, __);
+        assertEquals(x, 0);
     }
 
     @Koan
@@ -42,7 +42,7 @@ public class AboutConditionals {
         } else {
             x--;
         }
-        assertEquals(x, __);
+        assertEquals(x, 10);
     }
 
     @Koan
@@ -58,7 +58,7 @@ public class AboutConditionals {
         else
             x--;
         // ...but they are recommended.
-        assertEquals(x, __);
+        assertEquals(x, 10);
     }
 
     @Koan
@@ -76,7 +76,7 @@ public class AboutConditionals {
         } else {
             x--;
         }
-        assertEquals(x, __);
+        assertEquals(x, 0);
     }
 
     @Koan
@@ -93,7 +93,7 @@ public class AboutConditionals {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(result, "Basic One");
     }
 
     @Koan
@@ -108,7 +108,7 @@ public class AboutConditionals {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(result, "Basic OneTwoNothing");
     }
 
     @Koan
@@ -123,7 +123,7 @@ public class AboutConditionals {
             case 2:
                 result += "Two";
         }
-        assertEquals(result, __);
+        assertEquals(result, "Basic NothingTwo");
     }
 
     @Koan
@@ -140,24 +140,25 @@ public class AboutConditionals {
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(result, "Basic Nothing");
     }
 
     @Koan
     public void switchStatementSwitchValues() {
         // Try different (primitive) types for 'c'
         // Which types do compile?
-        // Does boxing work?
-        char c = 'a';
+        // Does boxing work?f
+        String c = new String("a");
+        Character b = new Character('a');
         String result = "Basic ";
-        switch (c) {
+        switch (b) {
             case 'a':
                 result += "One";
                 break;
             default:
                 result += "Nothing";
         }
-        assertEquals(result, __);
+        assertEquals(result, "Basic One");
     }
 
     @Koan
@@ -168,9 +169,9 @@ public class AboutConditionals {
         if (trueCount.count() || falseCount.count()) {
             x = "kthxbai";
         }
-        assertEquals(x, __);
-        assertEquals(trueCount.count, __);
-        assertEquals(falseCount.count, __);
+        assertEquals(x, "kthxbai");
+        assertEquals(trueCount.count, 1);
+        assertEquals(falseCount.count, 0);
     }
     
     @Koan
@@ -181,9 +182,9 @@ public class AboutConditionals {
         if (trueCount.count() | falseCount.count()) {
             x = "kthxbai";
         }
-        assertEquals(x, __);
-        assertEquals(trueCount.count, __);
-        assertEquals(falseCount.count, __);
+        assertEquals(x,"kthxbai");
+        assertEquals(trueCount.count, 1);
+        assertEquals(falseCount.count, 1);
     }
     
     class Counter {
