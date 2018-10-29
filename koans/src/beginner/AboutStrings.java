@@ -181,7 +181,7 @@ public class AboutStrings {
     public void extraArgumentsToMessageFormatGetIgnored() {
         assertEquals(MessageFormat.format("{0} {1} {0}", "a", "b", "c"), "a b a");
     }
-
+f
     @Koan
     public void insufficientArgumentsToMessageFormatDoesNotReplaceTheToken() {
         assertEquals(MessageFormat.format("{0} {1} {0}", "a"), "a {1} a");
